@@ -35,7 +35,7 @@ final class Token implements InitializationInterface {
      * @param string $accessToken access token
      * @return Token self
      */
-    private function setAccessToken($accessToken) {
+    public function setAccessToken($accessToken) {
         $this->accessToken = (string) $accessToken;
         return $this;
     }
