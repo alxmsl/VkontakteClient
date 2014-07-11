@@ -1,7 +1,7 @@
 {
     "name": "alxmsl/vkontakteclient",
     "description": "Simple client for Vkontakte API",
-    "keywords": ["vkontakte", "vkontakte-api", "api"],
+    "keywords": ["vkontakte", "vk", "vkontakte-api", "vk-api"],
     "license": "WTFPL",
     "authors": [
         {
