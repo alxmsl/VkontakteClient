@@ -1,28 +1,19 @@
 Vkontakte API Client
 ============
 
-Simple Vkontakte API client on PHP
+Simple client for Vkontakte API
 
 Installation
 -------
 
-For install library completely, you need to update submodules after checkout. For example:
+Require packet in a composer.json
 
-    git clone git://github.com/alxmsl/VkontakteClient.git temp
-    && cd temp
-    && git submodule init
-    && git submodule update
+    "alxmsl/vkontakteclient": ">=1.0.0"
 
-Authorization example
--------
-
-
+Run Composer: `php composer.phar install`
 
 Non-secure method call example
 -------
-
-    include('../source/Autoloader.php');
-    include '../lib/Network/source/Autoloader.php';
 
     // Create API client
     $Client = new \Vkontakte\Client\API\Client();
