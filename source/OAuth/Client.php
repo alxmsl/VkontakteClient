@@ -1,8 +1,7 @@
 <?php
 
-namespace Vkontakte\Client\OAuth;
-
-use Network\Http\Request;
+namespace alxmsl\Vkontakte\OAuth;
+use alxmsl\Network\Http\Request;
 
 /**
  * VK OAuth client

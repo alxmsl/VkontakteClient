@@ -1,8 +1,9 @@
 <?php
 
-namespace Vkontakte\Client\OAuth;
-
-use Vkontakte\Client\OAuth\Response\ResponseFactory;
+namespace alxmsl\Vkontakte\OAuth;
+use alxmsl\Vkontakte\OAuth\Response\ResponseFactory;
+use alxmsl\Vkontakte\OAuth\Response\Error;
+use alxmsl\Vkontakte\OAuth\Response\Token;
 
 /**
  * Server authorization
@@ -13,7 +14,7 @@ final class ServerAuthorization extends Client {
     /**
      * Get access token by user authorization code
      * @param string $code user authorization code
-     * @return \Vkontakte\Client\OAuth\Response\Error|\Vkontakte\Client\OAuth\Response\Token token or error instance
+     * @return Error|Token token or error instance
      */
     public function authorize($code) {
         $Request = $this->getRequest(self::ENDPOINT_ACCESS_TOKEN_REQUEST);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vkontakte\Client\OAuth\Response;
+namespace alxmsl\Vkontakte\OAuth\Response;
 
 /**
  * VK OAuth response instances factory

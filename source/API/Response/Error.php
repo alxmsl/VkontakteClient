@@ -1,8 +1,8 @@
 <?php
 
-namespace Vkontakte\Client\API\Response;
-
-use Vkontakte\Client\ObjectInitializedInterface;
+namespace alxmsl\Vkontakte\API\Response;
+use alxmsl\Vkontakte\ObjectInitializedInterface;
+use stdClass;
 
 /**
  * VK API error response
@@ -81,7 +81,7 @@ final class Error implements ObjectInitializedInterface {
 
     /**
      * Initialization method
-     * @param \stdClass $Object object for initialization
+     * @param stdClass $Object object for initialization
      * @return ObjectInitializedInterface initialized object
      */
     public static function initializeByObject(\stdClass $Object) {

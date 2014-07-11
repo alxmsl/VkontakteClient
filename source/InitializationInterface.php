@@ -1,6 +1,6 @@
 <?php
 
-namespace Vkontakte\Client;
+namespace alxmsl\Vkontakte;
 
 /**
  * Interface for self-initialization objects

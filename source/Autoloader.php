@@ -1,9 +1,9 @@
 <?php
 
-namespace Vkontakte\Client;
+namespace alxmsl\Vkontakte;
 
 // append autoloader
-spl_autoload_register(array('\Vkontakte\Client\Autoloader', 'Autoloader'));
+spl_autoload_register(array('\Vkontakte\Client\Autoloader', 'autoload'));
 
 /**
  * Vkontakte API Client classes autoloader
@@ -15,28 +15,28 @@ final class Autoloader {
      * @var array array of available classes
      */
     private static $classes = array(
-        'Vkontakte\\Client\\Autoloader'                 => 'Autoloader.php',
-        'Vkontakte\\Client\\InitializationInterface'    => 'InitializationInterface.php',
-        'Vkontakte\\Client\\ObjectInitializedInterface' => 'ObjectInitializedInterface.php',
+        'alxmsl\\Vkontakte\\Autoloader'                 => 'Autoloader.php',
+        'alxmsl\\Vkontakte\\InitializationInterface'    => 'InitializationInterface.php',
+        'alxmsl\\Vkontakte\\ObjectInitializedInterface' => 'ObjectInitializedInterface.php',
 
-        'Vkontakte\\Client\\OAuth\\ServerAuthorization'         => 'OAuth/ServerAuthorization.php',
-        'Vkontakte\\Client\\OAuth\\Client'                      => 'OAuth/Client.php',
-        'Vkontakte\\Client\\OAuth\\ApplicationAuthorization'    => 'OAuth/ApplicationAuthorization.php',
-        'Vkontakte\\Client\\OAuth\\Response\\Code'              => 'OAuth/Response/Code.php',
-        'Vkontakte\\Client\\OAuth\\Response\\Error'             => 'OAuth/Response/Error.php',
-        'Vkontakte\\Client\\OAuth\\Response\\Token'             => 'OAuth/Response/Token.php',
-        'Vkontakte\\Client\\OAuth\\Response\\ResponseFactory'   => 'OAuth/Response/ResponseFactory.php',
+        'alxmsl\\Vkontakte\\OAuth\\ServerAuthorization'       => 'OAuth/ServerAuthorization.php',
+        'alxmsl\\Vkontakte\\OAuth\\Client'                    => 'OAuth/Client.php',
+        'alxmsl\\Vkontakte\\OAuth\\ApplicationAuthorization'  => 'OAuth/ApplicationAuthorization.php',
+        'alxmsl\\Vkontakte\\OAuth\\Response\\Code'            => 'OAuth/Response/Code.php',
+        'alxmsl\\Vkontakte\\OAuth\\Response\\Error'           => 'OAuth/Response/Error.php',
+        'alxmsl\\Vkontakte\\OAuth\\Response\\Token'           => 'OAuth/Response/Token.php',
+        'alxmsl\\Vkontakte\\OAuth\\Response\\ResponseFactory' => 'OAuth/Response/ResponseFactory.php',
 
-        'Vkontakte\\Client\\API\\Client'                    => 'API/Client.php',
-        'Vkontakte\\Client\\API\\Response\\Error'           => 'API/Response/Error.php',
-        'Vkontakte\\Client\\API\\Response\\ResponseFactory' => 'API/Response/ResponseFactory.php',
+        'alxmsl\\Vkontakte\\API\\Client'                    => 'API/Client.php',
+        'alxmsl\\Vkontakte\\API\\Response\\Error'           => 'API/Response/Error.php',
+        'alxmsl\\Vkontakte\\API\\Response\\ResponseFactory' => 'API/Response/ResponseFactory.php',
     );
 
     /**
      * Component autoloader
      * @param string $className claass name
      */
-    public static function Autoloader($className) {
+    public static function autoload($className) {
         if (array_key_exists($className, self::$classes)) {
             $fileName = realpath(dirname(__FILE__)) . '/' . self::$classes[$className];
             if (file_exists($fileName)) {

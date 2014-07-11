@@ -1,8 +1,7 @@
 <?php
 
-namespace Vkontakte\Client\OAuth\Response;
-
-use Vkontakte\Client\InitializationInterface;
+namespace alxmsl\Vkontakte\OAuth\Response;
+use alxmsl\Vkontakte\InitializationInterface;
 
 /**
  * Authorization token

@@ -1,11 +1,10 @@
 <?php
 
-namespace Vkontakte\Client\API;
-
-use Vkontakte\Client\OAuth\Response\Token,
-    Vkontakte\Client\OAuth\Client as OAuthClient,
-    Network\Http\Request,
-    Vkontakte\Client\API\Response\ResponseFactory;
+namespace alxmsl\Vkontakte\API;
+use alxmsl\Vkontakte\API\Response\ResponseFactory;
+use alxmsl\Vkontakte\OAuth\Response\Token;
+use alxmsl\Vkontakte\OAuth\Client as OAuthClient;
+use alxmsl\Network\Http\Request;
 
 /**
  * VK API Client

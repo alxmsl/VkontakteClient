@@ -1,6 +1,7 @@
 <?php
 
-namespace Vkontakte\Client;
+namespace alxmsl\Vkontakte;
+use stdClass;
 
 /**
  * Interface for self-initialization objects by standard classes
@@ -10,8 +11,8 @@ namespace Vkontakte\Client;
 interface ObjectInitializedInterface {
     /**
      * Initialization method
-     * @param \stdClass $Object object for initialization
+     * @param stdClass $Object object for initialization
      * @return ObjectInitializedInterface initialized object
      */
-    public static function initializeByObject(\stdClass $Object);
+    public static function initializeByObject(stdClass $Object);
 }

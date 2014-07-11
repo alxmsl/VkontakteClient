@@ -1,6 +1,7 @@
 <?php
 
-namespace Vkontakte\Client\API\Response;
+namespace alxmsl\Vkontakte\API\Response;
+use stdClass;
 
 /**
  * VK API response factory
@@ -11,7 +12,7 @@ final class ResponseFactory {
     /**
      * Create response instance by string
      * @param string $string string response data
-     * @return Error|\stdClass response instance
+     * @return Error|stdClass response instance
      */
     public static function createResponse($string) {
         $Object = json_decode($string);
