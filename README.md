@@ -1,6 +1,8 @@
 Vkontakte API Client
 ============
 
+Simple Vkontakte API client on PHP
+
 Installation
 -------
 

@@ -6,11 +6,12 @@
  */
 
 // Firstly include base class
-include('../source/Autoloader.php');
-include '../lib/Network/source/Autoloader.php';
+include('../vendor/autoload.php');
+
+use alxmsl\Vkontakte\API\Client;
 
 // Create API client
-$Client = new \Vkontakte\Client\API\Client();
+$Client = new Client();
 
 // Non-secure method call
 $Result = $Client->callNotSecure('users.get', array(
