@@ -37,6 +37,11 @@ final class Client extends OAuthClient implements ClientInterface {
     private $Token = null;
 
     /**
+     * @var string API version https://vk.com/dev/versions
+     */
+    private $version = null;
+
+    /**
      * @inheritdoc
      * @return Client self
      */
@@ -53,11 +58,32 @@ final class Client extends OAuthClient implements ClientInterface {
     }
 
     /**
+     * Api version setter
+     * @param string $version api version
+     * @return $this
+     */
+    public function setVersion($version) {
+        $this->version = (string) $version;
+        return $this;
+    }
+
+    /**
+     * Api version getter
+     * @return string api version
+     */
+    public function getVersion() {
+        return $this->version;
+    }
+
+    /**
      * @inheritdoc
      */
     public function callSecure($method, array $get = null, array $post = null) {
         $Request = $this->getRequest(self::SCHEME_HTTPS . '://' . self::ENDPOINT_API . $method);
         $Request->addGetField('access_token', $this->getToken()->getAccessToken());
+        if ($this->getVersion()) {
+            $Request->addGetField('v', $this->getVersion());
+        }
         $this->addRequestParameters($Request, $get, $post);
         return ResponseFactory::createResponse($Request->send());
     }
@@ -67,6 +93,9 @@ final class Client extends OAuthClient implements ClientInterface {
      */
     public function callNotSecure($method, array $get = null, array $post = null) {
         $Request = $this->getRequest(self::SCHEME_HTTP . '://' . self::ENDPOINT_API . $method);
+        if ($this->getVersion()) {
+            $Request->addGetField('v', $this->getVersion());
+        }
         $this->addRequestParameters($Request, $get, $post);
 
         $Token = $this->getToken();
