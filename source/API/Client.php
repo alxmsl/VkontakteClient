@@ -8,6 +8,7 @@
  */
 
 namespace alxmsl\Vkontakte\API;
+
 use alxmsl\Vkontakte\API\Response\ResponseFactory;
 use alxmsl\Vkontakte\OAuth\Response\Token;
 use alxmsl\Vkontakte\OAuth\Client as OAuthClient;
@@ -18,7 +19,7 @@ use alxmsl\Network\Http\Request;
  * @author alxmsl
  * @date 3/30/13
  */
-final class Client extends OAuthClient {
+final class Client extends OAuthClient implements ClientInterface {
     /**
      * API access schemes
      */
@@ -28,7 +29,7 @@ final class Client extends OAuthClient {
     /**
      * API endpoint
      */
-    const   ENDPOINT_API        = 'api.vk.com/method/';
+    const ENDPOINT_API = 'api.vk.com/method/';
 
     /**
      * @var Token|null token authorization instance
@@ -36,8 +37,7 @@ final class Client extends OAuthClient {
     private $Token = null;
 
     /**
-     * Authorization token setter
-     * @param \Vkontakte\Client\OAuth\Response\Token $Token authorization token instance
+     * @inheritdoc
      * @return Client self
      */
     public function setToken(Token $Token) {
@@ -46,19 +46,14 @@ final class Client extends OAuthClient {
     }
 
     /**
-     * Authorization token getter
-     * @return Token authorization token instance
+     * @inheritdoc
      */
     public function getToken() {
         return $this->Token;
     }
 
     /**
-     * Secure call VK API nethod
-     * @param string $method method name
-     * @param array $get GET method parameters
-     * @param array $post POST method parameters
-     * @return \Vkontakte\Client\API\Response\Error|\stdClass error or result instance
+     * @inheritdoc
      */
     public function callSecure($method, array $get = null, array $post = null) {
         $Request = $this->getRequest(self::SCHEME_HTTPS . '://' . self::ENDPOINT_API . $method);
@@ -68,11 +63,7 @@ final class Client extends OAuthClient {
     }
 
     /**
-     * Non-secure call VK API method
-     * @param string $method method name
-     * @param array $get GET method parameters
-     * @param array $post POST method parameters
-     * @return \Vkontakte\Client\API\Response\Error|\stdClass error or result instance
+     * @inheritdoc
      */
     public function callNotSecure($method, array $get = null, array $post = null) {
         $Request = $this->getRequest(self::SCHEME_HTTP . '://' . self::ENDPOINT_API . $method);
