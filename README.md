@@ -20,7 +20,7 @@ Non-secure method call example
 
     // Non-secure method call
     $Result = $Client->callNotSecure('users.get', array(
-        'uid' => 15380059,
+        'user_ids' => '5103,15380059',
     ));
 
     // Show result
